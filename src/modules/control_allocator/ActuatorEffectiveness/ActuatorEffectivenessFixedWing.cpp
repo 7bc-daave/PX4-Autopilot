@@ -61,7 +61,8 @@ ActuatorEffectivenessFixedWing::getEffectivenessMatrix(Configuration &configurat
 	return (rotors_added_successfully && surfaces_added_successfully);
 }
 
-void ActuatorEffectivenessFixedWing::allocateAuxilaryControls(const float dt, ActuatorVector &actuator_sp)
+void ActuatorEffectivenessFixedWing::allocateAuxilaryControls(const float dt, int matrix_index,
+		ActuatorVector &actuator_sp)
 {
 	// apply flaps
 	normalized_unsigned_setpoint_s flaps_setpoint;

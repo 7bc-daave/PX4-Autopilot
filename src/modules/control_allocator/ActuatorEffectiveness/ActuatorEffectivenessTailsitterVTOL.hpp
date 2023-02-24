@@ -70,7 +70,7 @@ public:
 		normalize[1] = false;
 	}
 
-	void allocateAuxilaryControls(const float dt, ActuatorVector &actuator_sp) override;
+	void allocateAuxilaryControls(const float dt, int matrix_index, ActuatorVector &actuator_sp) override;
 
 	void setFlightPhase(const FlightPhase &flight_phase) override;
 

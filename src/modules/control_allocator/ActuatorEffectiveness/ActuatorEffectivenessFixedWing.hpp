@@ -49,7 +49,7 @@ public:
 
 	const char *name() const override { return "Fixed Wing"; }
 
-	void allocateAuxilaryControls(const float dt, ActuatorVector &actuator_sp) override;
+	void allocateAuxilaryControls(const float dt, int matrix_index, ActuatorVector &actuator_sp) override;
 
 private:
 	ActuatorEffectivenessRotors _rotors;

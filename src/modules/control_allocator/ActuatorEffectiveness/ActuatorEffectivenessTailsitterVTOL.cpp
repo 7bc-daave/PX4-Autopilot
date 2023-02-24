@@ -68,21 +68,24 @@ ActuatorEffectivenessTailsitterVTOL::getEffectivenessMatrix(Configuration &confi
 	return (mc_rotors_added_successfully && surfaces_added_successfully);
 }
 
-void ActuatorEffectivenessTailsitterVTOL::allocateAuxilaryControls(const float dt, ActuatorVector &actuator_sp)
+void ActuatorEffectivenessTailsitterVTOL::allocateAuxilaryControls(const float dt, int matrix_index,
+		ActuatorVector &actuator_sp)
 {
-	// apply flaps
-	normalized_unsigned_setpoint_s flaps_setpoint;
+	if (matrix_index == 1) {
+		// apply flaps
+		normalized_unsigned_setpoint_s flaps_setpoint;
 
-	_flaps_setpoint_sub.copy(&flaps_setpoint);
+		_flaps_setpoint_sub.copy(&flaps_setpoint);
 
-	_control_surfaces.applyFlaps(flaps_setpoint.normalized_setpoint, _first_control_surface_idx, dt, actuator_sp);
+		_control_surfaces.applyFlaps(flaps_setpoint.normalized_setpoint, _first_control_surface_idx, dt, actuator_sp);
 
-	// apply spoilers
-	normalized_unsigned_setpoint_s spoilers_setpoint;
+		// apply spoilers
+		normalized_unsigned_setpoint_s spoilers_setpoint;
 
-	_spoilers_setpoint_sub.copy(&spoilers_setpoint);
+		_spoilers_setpoint_sub.copy(&spoilers_setpoint);
 
-	_control_surfaces.applySpoilers(spoilers_setpoint.normalized_setpoint, _first_control_surface_idx, dt, actuator_sp);
+		_control_surfaces.applySpoilers(spoilers_setpoint.normalized_setpoint, _first_control_surface_idx, dt, actuator_sp);
+	}
 
 }
 

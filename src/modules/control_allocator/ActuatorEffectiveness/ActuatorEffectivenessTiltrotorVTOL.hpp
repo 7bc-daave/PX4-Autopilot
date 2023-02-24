@@ -76,7 +76,7 @@ public:
 
 	void setFlightPhase(const FlightPhase &flight_phase) override;
 
-	void allocateAuxilaryControls(const float dt, ActuatorVector &actuator_sp) override;
+	void allocateAuxilaryControls(const float dt, int matrix_index, ActuatorVector &actuator_sp) override;
 
 	void updateSetpoint(const matrix::Vector<float, NUM_AXES> &control_sp, int matrix_index,
 			    ActuatorVector &actuator_sp, const matrix::Vector<float, NUM_ACTUATORS> &actuator_min,
