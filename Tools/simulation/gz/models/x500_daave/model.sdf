@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='x500-Daave'>
+    <include merge='true'>
+      <uri>model://x500</uri>
+      <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+        <dimensions>3</dimensions>
+        <odom_publish_frequency>50</odom_publish_frequency>
+        <odom_frame>odom</odom_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+        <!-- Align published frame with real base_link position of x500. -->
+        <xyz_offset>0 0 .24</xyz_offset>
+      </plugin>
+    </include>
+  </model>
+</sdf>
