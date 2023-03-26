@@ -8,12 +8,12 @@
 . ${R}etc/init.d/rc.mc_defaults
 
 PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
-PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=boro}
 PX4_SIM_MODEL=${PX4_SIM_MODEL:=x500_daave}
 
 param set-default SIM_GZ_EN 1
 
-param set-default SENS_EN_GPSSIM 1
+param set-default SENS_EN_GPSSIM 0
 param set-default SENS_EN_BAROSIM 1
 param set-default SENS_EN_MAGSIM 1
 
@@ -52,3 +52,36 @@ param set-default SIM_GZ_EC_MAX3 1000
 param set-default SIM_GZ_EC_MAX4 1000
 
 param set-default MPC_THR_HOVER 0.60
+
+# generated using command: param show-for-airframe
+param set-default COM_FAIL_ACT_T 0.0000
+param set-default COM_OBL_RC_ACT 4
+param set-default COM_RC_LOSS_T 1.0000
+param set-default EKF2_ASP_DELAY 0.0000
+param set-default EKF2_AVEL_DELAY 0.0000
+param set-default EKF2_EV_CTRL 9
+param set-default EKF2_EV_NOISE_MD 1
+param set-default EKF2_GPS_CHECK 0
+param set-default EKF2_GPS_CTRL 0
+param set-default EKF2_GPS_DELAY 0.0000
+param set-default EKF2_HGT_REF 0
+param set-default EKF2_MAG_TYPE 4
+param set-default EKF2_OF_DELAY 0.0000
+param set-default EKF2_RNG_DELAY 0.0000
+param set-default MIS_TAKEOFF_ALT 1.0000
+param set-default MPC_ACC_DOWN_MAX 0.9420
+param set-default MPC_ACC_HOR 1.1400
+param set-default MPC_ACC_HOR_MAX 2.1300
+param set-default MPC_ACC_UP_MAX 1.1400
+param set-default MPC_JERK_AUTO 1.2400
+param set-default MPC_JERK_MAX 2.4800
+param set-default MPC_MAN_Y_MAX 83.7000
+param set-default MPC_MAN_Y_TAU 0.4917
+param set-default MPC_VEL_MANUAL 0.5000
+param set-default MPC_XY_CRUISE 0.5000
+param set-default MPC_XY_VEL_ALL 0.5000
+param set-default MPC_XY_VEL_MAX 0.5000
+param set-default NAV_RCL_ACT 3
+param set-default RTL_RETURN_ALT 1.5000
+param set-default SYS_HAS_GPS 0
+param set-default SYS_VEHICLE_RESP 0.1000
